@@ -29,6 +29,7 @@ import loom from "./services/loom.js";
 import facebook from "./services/facebook.js";
 import bluesky from "./services/bluesky.js";
 import newgrounds from "./services/newgrounds.js";
+import areena from "./services/areena.js";
 
 let freebind;
 
@@ -103,6 +104,19 @@ export default async function({ host, patternMatch, params, authType }) {
                     id: patternMatch.id,
                     quality: params.videoQuality
                 });
+                break;
+            
+            case "yle":
+                if (url.hostname === "areena.yle.fi") {
+                    r = await areena({
+                        id: patternMatch.id,
+                        quality: params.videoQuality
+                    }); 
+                } else {
+                    return createResponse("error", {
+                        code: "error.api.service.unsupported"
+                    });
+                }
                 break;
 
             case "bilibili":

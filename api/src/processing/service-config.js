@@ -1,7 +1,7 @@
 import UrlPattern from "url-pattern";
 
 export const audioIgnore = new Set(["vk", "ok", "loom"]);
-export const hlsExceptions = new Set(["dailymotion", "vimeo", "rutube", "bsky", "youtube"]);
+export const hlsExceptions = new Set(["dailymotion", "vimeo", "rutube", "bsky", "youtube", "yle"]);
 
 export const services = {
     bilibili: {
@@ -213,7 +213,15 @@ export const services = {
             "v/:id"
         ],
         subdomains: ["music", "m"],
-    }
+    },
+    yle: {
+        patterns: [
+            "1-:id",
+            "podcastit/1-:id"
+        ],
+        subdomains: ["areena"],
+        tld: "fi"
+    },
 }
 
 Object.values(services).forEach(service => {

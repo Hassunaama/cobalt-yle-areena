@@ -1,6 +1,7 @@
 const friendlyNames = {
     bsky: "bluesky",
-    twitch: "twitch clips"
+    twitch: "twitch clips",
+    yle: "yle areena"
 }
 
 export const friendlyServiceName = (service) => {

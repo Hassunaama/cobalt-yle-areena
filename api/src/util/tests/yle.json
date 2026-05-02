@@ -1,0 +1,11 @@
+[
+    {
+        "name": "regular video",
+        "url": "https://areena.yle.fi/1-2354770",
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "tunnel"
+        }
+    }
+]
